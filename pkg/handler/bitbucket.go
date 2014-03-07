@@ -265,7 +265,7 @@ func (b *BitbucketHandler) Hook(w http.ResponseWriter, r *http.Request, u *User)
 	}
 
 	// parse the build script
-	buildscript, err := script.ParseBuild(raw.Data, repo.Params)
+	buildscript, err := script.ParseBuild([]byte(raw.Data), repo.Params)
 	if err != nil {
 		msg := "Could not parse your .drone.yml file.  It needs to be a valid drone yaml file.\n\n" + err.Error() + "\n"
 		if err := saveFailedBuild(commit, msg); err != nil {
