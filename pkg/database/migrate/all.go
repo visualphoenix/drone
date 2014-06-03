@@ -13,8 +13,8 @@ func (m *Migration) All() *Migration {
 	m.Add(GitHubEnterpriseSupport)
 	m.Add(AddOpenInvitationColumn)
 	m.Add(AddGitlabColumns)
-	m.Add(SaveDroneYml)
 	m.Add(AddStashColumns)
+	m.Add(SaveDroneYml)
 
 	// m.Add(...)
 	// ...
